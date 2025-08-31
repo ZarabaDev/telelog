@@ -1,6 +1,6 @@
 {
   "name": "telelog-js",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Envie logs e alertas para o Telegram em 60s (Node/TS)",
   "license": "MIT",
   "type": "module",

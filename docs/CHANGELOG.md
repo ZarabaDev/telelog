@@ -24,6 +24,11 @@ Todas as mudanças notáveis neste monorepo serão documentadas aqui.
 - Winston/Pino: ajustes de tipos mínimos e assinatura de `write` no `Writable`.
 - package.json: `bin` atualizado para `bin/telelog` e inclusão de `bin` em `files` publicados.
 
+## [0.1.1] - 2025-08-31
+- fix(telelog-js): corrigido wrapper da CLI (`bin/telelog`) para resolver symlink de `.bin` e referenciar `dist/cli.js` corretamente.
+- docs: atualizações de READMEs (raiz, telelog-py, telelog-js) com requisitos e `.env`.
+- chore: bump de versão `telelog-js` e `telelog-py` para 0.1.1 e publicação via GitHub Actions.
+
 ## [Unreleased] - 2025-08-31
 - docs: READMEs atualizados (raiz, telelog-py, telelog-js) com:
   - Requisitos de ambiente (Python >=3.8, Node >=18 + ESM).
