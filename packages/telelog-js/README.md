@@ -64,3 +64,23 @@ Códigos de saída:
 ## Segurança
 
 Nunca commitar `.env`. Use `.env.example` como referência e secrets no CI/CD.
+
+## Requisitos
+
+- Node >= 18.
+- ESM: use arquivos `.mjs` ou defina `"type": "module"` no `package.json`.
+  - Em projetos CommonJS, utilize import dinâmico: `import('telelog-js').then(m => m.sendTelegram(...))`.
+
+## Variáveis de ambiente e .env
+
+- O pacote lê um arquivo `.env` do diretório atual (CWD), se existir.
+- Variáveis já definidas no ambiente têm precedência e não são sobrescritas pelo `.env`.
+- Necessárias:
+  - `TELEGRAM_BOT_TOKEN`
+  - `TELEGRAM_CHAT_ID` ou `TELEGRAM_CHAT_IDS` (múltiplos separados por vírgula)
+
+## Autor & Contato
+
+- GitHub: https://github.com/ZarabaDev
+- E-mail: zaraba@zarabatech.com.br
+- Site: https://zarabatech.com.br

@@ -23,3 +23,9 @@ Todas as mudanças notáveis neste monorepo serão documentadas aqui.
 - CLI: remoção de import explícito de `process` (uso do global).
 - Winston/Pino: ajustes de tipos mínimos e assinatura de `write` no `Writable`.
 - package.json: `bin` atualizado para `bin/telelog` e inclusão de `bin` em `files` publicados.
+
+## [Unreleased] - 2025-08-31
+- docs: READMEs atualizados (raiz, telelog-py, telelog-js) com:
+  - Requisitos de ambiente (Python >=3.8, Node >=18 + ESM).
+  - Orientação sobre `.env` lido a partir do CWD e precedência de variáveis já exportadas.
+  - Seção "Autor & Contato" (GitHub ZarabaDev, e-mail zaraba@zarabatech.com.br, site zarabatech.com.br).

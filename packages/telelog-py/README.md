@@ -54,3 +54,21 @@ Códigos de saída:
 ## Segurança
 
 Nunca commitar `.env`. Use `.env.example` como referência e secrets no CI/CD.
+
+## Requisitos
+
+- Python >= 3.8
+
+## Variáveis de ambiente e .env
+
+- A biblioteca lê um arquivo `.env` do diretório atual (CWD), se existir.
+- Variáveis já definidas no ambiente têm precedência e não são sobrescritas pelo `.env`.
+- Necessárias:
+  - `TELEGRAM_BOT_TOKEN`
+  - `TELEGRAM_CHAT_ID` ou `TELEGRAM_CHAT_IDS` (múltiplos separados por vírgula)
+
+## Autor & Contato
+
+- GitHub: https://github.com/ZarabaDev
+- E-mail: zaraba@zarabatech.com.br
+- Site: https://zarabatech.com.br

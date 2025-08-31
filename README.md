@@ -20,3 +20,14 @@ Avisos:
 - Este projeto é para alertas, não substitui soluções de observabilidade.
 
 Consulte os READMEs dos subpacotes para instalação e uso.
+
+## Notas rápidas
+
+- O `.env` é lido do diretório atual (CWD) se existir; variáveis já exportadas no ambiente têm precedência.
+- Requisitos: Python >= 3.8 e Node >= 18 (ESM para o pacote JS).
+
+## Autor & Contato
+
+- GitHub: https://github.com/ZarabaDev
+- E-mail: zaraba@zarabatech.com.br
+- Site: https://zarabatech.com.br

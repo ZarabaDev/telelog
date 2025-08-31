@@ -1,4 +1,14 @@
 #!/usr/bin/env sh
 # Wrapper para executar a CLI compilada
-DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+SELF="$0"
+# Resolve symlink (ex.: node_modules/.bin/telelog -> ../telelog-js/bin/telelog)
+# readlink sem -f para compatibilidade; se não houver symlink, usa o próprio caminho
+TARGET=$(readlink "$SELF" 2>/dev/null || printf '%s' "")
+BASEDIR=$(CDPATH= cd -- "$(dirname -- "$SELF")" && pwd)
+if [ -n "$TARGET" ]; then
+  # Resolve alvo relativo ao diretório do symlink
+  DIR=$(CDPATH= cd -- "$BASEDIR" && cd -- "$(dirname -- "$TARGET")" && pwd)
+else
+  DIR="$BASEDIR"
+fi
 exec node "$DIR/../dist/cli.js" "$@"
