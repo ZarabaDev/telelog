@@ -1,0 +1,32 @@
+name: Publish telelog-js to npm
+
+on:
+  push:
+    tags:
+      - 'telelog-js/v*'
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          registry-url: 'https://registry.npmjs.org'
+      - name: Install deps
+        working-directory: packages/telelog-js
+        run: npm i --no-audit --no-fund
+      - name: Build
+        working-directory: packages/telelog-js
+        run: npm run build
+      - name: Publish
+        if: startsWith(github.ref, 'refs/tags/')
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        working-directory: packages/telelog-js
+        run: npm publish --access public

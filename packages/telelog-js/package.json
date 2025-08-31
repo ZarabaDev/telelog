@@ -1,0 +1,48 @@
+{
+  "name": "telelog-js",
+  "version": "0.1.0",
+  "description": "Envie logs e alertas para o Telegram em 60s (Node/TS)",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/core.js",
+  "types": "dist/core.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/core.d.ts",
+      "default": "./dist/core.js"
+    },
+    "./winston": {
+      "types": "./dist/winston.d.ts",
+      "default": "./dist/winston.js"
+    },
+    "./pino": {
+      "types": "./dist/pino.d.ts",
+      "default": "./dist/pino.js"
+    }
+  },
+  "bin": {
+    "telelog": "bin/telelog"
+  },
+  "files": ["dist", "bin"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "clean": "rm -rf dist",
+    "lint": "eslint 'src/**/*.{ts,tsx}'",
+    "format": "prettier -w 'src/**/*.{ts,tsx,js,json,md}'",
+    "test": "vitest run",
+    "prepare": "npm run build"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.2",
+    "vitest": "^1.5.0"
+  },
+  "dependencies": {
+    "winston-transport": "^4.7.0"
+  }
+}

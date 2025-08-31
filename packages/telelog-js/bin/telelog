@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+# Wrapper para executar a CLI compilada
+DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+exec node "$DIR/../dist/cli.js" "$@"
